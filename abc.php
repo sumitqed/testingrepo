@@ -1,1 +1,2 @@
-echo 'abc'
+<?php
+echo 'abc';
