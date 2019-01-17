@@ -1,0 +1,32 @@
+# Note that the example .travis.yml file for child projects lives in /install.
+sudo: false
+language: php
+dist: trusty
+
+php:
+  - 7.1
+
+matrix:
+  fast_finish: true
+
+jdk:
+  - oraclejdk8
+
+before_install:
+  - - echo "running before install.";
+  - php -v
+
+install:
+  - echo "running install.";
+  - php abc.php
+
+script:
+  - echo "running script";
+
+deploy:
+   - provider: script
+     script: "echo"
+     skip_cleanup: true
+     on:
+       branch: master
+       php: 7.1
