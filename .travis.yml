@@ -14,18 +14,12 @@ jdk:
 
 before_install:
   - php -v
-  - 'cd abc; composer install;'
+  - 'cd my-project; composer install;'
+  - 'vendor/acquia/blt/bin/blt artifact:build'
+  - 'ls -al'
 
 install:
   - echo "running install.";
 
 script:
   - echo "running script";
-
-deploy:
-   - provider: script
-     script: "echo"
-     skip_cleanup: true
-     on:
-       branch: master
-       php: 7.1
