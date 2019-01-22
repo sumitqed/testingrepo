@@ -18,7 +18,6 @@ before_install:
 
 install:
   - echo "running install.";
-  - php abc.php
 
 script:
   - echo "running script";
